@@ -28,7 +28,6 @@ public class PlayListController {
 	//Get all playlists
 	@RequestMapping(value = "/playlist" , produces="application/json",method = RequestMethod.GET)
 	public List<PlayList> getAllPlayLists(){
-		System.out.println("Reading playlists");
 		return playListRepo.getAll();
 	}
 	
@@ -37,15 +36,14 @@ public class PlayListController {
 	@RequestMapping(value = "/songs" , produces="application/json",method = RequestMethod.GET)
 	public PlayList getPlayListSongs(@RequestParam String id){
 		PlayList playList = playListRepo.get(id);
-		System.out.println("Reading songs");
 		return playList;
-//		return playListRepo.getAllSongs();
 	}
 		
 	//Create a new playlist document
 	@RequestMapping(value = "/addNew",method =RequestMethod.POST)
-	public void createNewPlayList(@RequestBody PlayList playList) {
+	public PlayList createNewPlayList(@RequestBody PlayList playList) {
 		playListRepo.add(playList);
+		return playList;
 	}
 	
 	
@@ -57,7 +55,6 @@ public class PlayListController {
 		playList.setDescription(description);
 		playList.setRevision(playList.getRevision());
 		playListRepo.update(playList);
-		System.out.print("this was hit");
 	}
 	
 

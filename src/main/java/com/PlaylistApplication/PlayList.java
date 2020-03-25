@@ -2,7 +2,6 @@ package com.PlaylistApplication;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Component;
 
 
@@ -14,13 +13,25 @@ import com.fasterxml.jackson.databind.JsonNode;
 @Component
 public class PlayList {
 	    
-	    @JsonProperty("_id")	
+		@JsonProperty("_id")	
 	    private String id;
 	    @JsonProperty("_rev")
 	    private String revision;
 	    private String name;
 	    private String description;
 	    private List<SongEntity> songList = new ArrayList<SongEntity>();
+	    
+	    public PlayList(String id, String revision, String name, String description, List<SongEntity> songList) {
+		this.id = id;
+		this.revision = revision;
+		this.name = name;
+		this.description = description;
+		this.songList = songList;
+	}
+	    
+	    public PlayList() {
+	    	
+	    }
 	    
 	    public String getId() {
 	        return id;

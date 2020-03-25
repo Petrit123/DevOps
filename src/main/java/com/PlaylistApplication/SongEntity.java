@@ -17,6 +17,18 @@ public class SongEntity {
 	String releaseDate;
 	String downloadDate;
 	
+	public SongEntity(String title, String artist, String album, String releaseDate, String downloadDate) {
+		this.title = title;
+		this.artist = artist;
+		this.album = album;
+		this.releaseDate = releaseDate;
+		this.downloadDate = downloadDate;
+	}
+	
+	public SongEntity() {
+		
+	}
+	
 	public String getTitle() {
 		return title;
 	}
