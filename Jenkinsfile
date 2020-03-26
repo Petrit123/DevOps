@@ -12,6 +12,10 @@ node {
 
        }
        
+             stage ('SonarQube analysis') {
+      sh "${mvnHome}/bin/mvn verify sonar:sonar"
+      }
+       
        //stage ('Deploy Stage') {
         //sh "${mvnHome}/bin/mvn deploy"
        //}
