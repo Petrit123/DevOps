@@ -36,7 +36,7 @@ public class PlaylistApplicationTests {
     PlayList mockPlayList;
     
     @Test
-    public void testGetPlaylist() throws Exception {
+    public void getPlayListSongs() throws Exception {
     	songList.add(song);
     	mockPlayList = new PlayList("c6f9c78f8d1b6ae3f741c5b538000038","1-268907eacc9bc87bda0b8e84c2b24576","Playlist 1", "This is a test playlist", songList);
     	Mockito.when(
@@ -55,7 +55,7 @@ public class PlaylistApplicationTests {
     }
     
     @Test
-    public void testCreateNewPlaylist() throws Exception {
+    public void createNewPlayList() throws Exception {
     	songList.add(song);
     	mockPlayList = new PlayList("c6f9c78f8d1b6ae3f741c5b538000038","1-268907eacc9bc87bda0b8e84c2b24576","Playlist 1", "This is a test playlist", songList);
     	
