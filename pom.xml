@@ -17,7 +17,12 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-	</properties>
+
+  <sonar.projectKey>Petrit123_DevOps</sonar.projectKey>
+  <sonar.organization>petrit123</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.login>3e21d1cfcc1ea54176820a4fbfa88b3cd587af7e</sonar.login>
+</properties>
 
 	<dependencies>
 	<dependency>
@@ -30,7 +35,6 @@
     <artifactId>spring-boot-starter-test</artifactId>
     <scope>test</scope>
  
-    <!-- exclude junit 4 -->
  
     <exclusions>
         <exclusion>
