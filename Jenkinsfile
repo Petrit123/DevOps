@@ -17,5 +17,11 @@ pipeline {
 					sh 'mvn test'
 			}
 		}
+				stage ('SonarCloud Analysis') {
+			
+			steps {
+					sh 'mvn verify sonar:sonar'
+			}
+		}
 	}
 }
