@@ -2,7 +2,7 @@
         agent any
          	tools {
         maven 'maven' 
-    }
+            } try {
         stages {
           stage("build & SonarQube analysis") {
             steps {
@@ -15,9 +15,12 @@
             steps {
               timeout(time: 1, unit: 'HOURS') {
                 waitForQualityGate abortPipeline: true
-                emailext body: 'The build failed', subject: 'Build Failure', to: 'petritt.k@gmail.com'
               }
             }
           }
         }
+            } catch (err) {
+                  emailext body: 'The build failed', subject: 'Build Failure', to: 'petritt.k@gmail.com'
+            }
+                  
       }
