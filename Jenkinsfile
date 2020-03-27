@@ -21,15 +21,27 @@ pipeline {
 			
 			steps {
 					sh 'mvn verify sonar:sonar'
-				timeout(time: 1, unit: 'HOURS') {
+			}
+		}
+		stage("Quality Gate") {
+
+ 
+steps {
+
+ 
+timeout(time: 1, unit: 'HOURS') {
 
  
 waitForQualityGate abortPipeline: true
 
  
 }
-			}
-		}
+
+ 
+}
+
+ 
+}
 		
 		stage ('Build Stage') {
 		 steps {
@@ -37,5 +49,10 @@ waitForQualityGate abortPipeline: true
 		}
 		}
 		
+	}
+	post {
+		   failure {
+			   emailext body: 'The build failed', subject: 'Build failure', to: 'petritt.k@gmail.com'
+		   }
 	}
 }
