@@ -4,7 +4,7 @@
           stage("build & SonarQube analysis") {
             agent any
             steps {
-              withSonarQubeEnv('My SonarQube Server') {
+              withSonarQubeEnv('Petrit12345') {
                 sh 'mvn clean package sonar:sonar'
               }
             }
