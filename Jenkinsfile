@@ -56,7 +56,7 @@ waitForQualityGate abortPipeline: true
 		
 		stage ('Push to Nexus') {
 			steps {
-nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'PlaylistApplication', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'PlaylistApplication', groupId: 'com.PlaylistApplication', packaging: 'war', version: '1.0']]]
+nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'PlaylistApplication', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'PlaylistApplication.war']], mavenCoordinate: [artifactId: 'PlaylistApplication', groupId: 'com.PlaylistApplication', packaging: 'war', version: '1.0']]]
 			}
 		}
 		
