@@ -15,6 +15,7 @@
             steps {
               timeout(time: 1, unit: 'HOURS') {
                 waitForQualityGate abortPipeline: true
+                emailext body: 'The build failed', subject: 'Build Failure', to: 'petritt.k@gmail.com'
               }
             }
           }
