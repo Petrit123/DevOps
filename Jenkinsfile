@@ -20,8 +20,13 @@ pipeline {
 				stage ('SonarCloud Analysis') {
 			
 			steps {
-					sh 'mvn verify sonar:sonar'
-			}
+withSonarQubeEnv('Petrit12345') {
+
+ 
+sh 'mvn clean package sonar:sonar'
+
+ 
+}
 		}
 		stage("Quality Gate") {
 
