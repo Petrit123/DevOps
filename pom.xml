@@ -138,6 +138,7 @@
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
       </plugin>
+      
 		</plugins>
 		
 		<finalName>playlistapplication-docker</finalName>
@@ -147,12 +148,12 @@
     <repository>
       <id>nexus</id>
       <name>Releases</name>
-      <url>http://18.202.248.194:8081/repository/maven-releases</url>
+      <url>http://54.194.77.108:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
       <id>nexus</id>
       <name>Snapshot</name>
-      <url>http://18.202.248.194:8081/repository/maven-snapshots</url>
+      <url>http://54.194.77.108:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 
