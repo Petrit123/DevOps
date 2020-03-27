@@ -21,6 +21,13 @@ pipeline {
 			
 			steps {
 					sh 'mvn verify sonar:sonar'
+				timeout(time: 1, unit: 'HOURS') {
+
+ 
+waitForQualityGate abortPipeline: true
+
+ 
+}
 			}
 		}
 		
