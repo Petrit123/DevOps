@@ -3,8 +3,8 @@
          	tools {
         maven 'maven' 
             }
+    	try {
         stages {
-        	try {
           stage("build & SonarQube analysis") {
             steps {
               withSonarQubeEnv('Petrit12345') {
@@ -20,9 +20,9 @@
                             
             }
           }
-        } catch (err) {
-        	emailext body: 'The build failed', subject: 'Build Failure', to: 'petritt.k@gmail.com'
         }
+    	}     catch (err) {
+        	emailext body: 'The build failed', subject: 'Build Failure', to: 'petritt.k@gmail.com'
         }
                   
       }
