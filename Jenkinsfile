@@ -24,7 +24,7 @@ withSonarQubeEnv('Petrit12345') {
 
  
 sh 'mvn clean package sonar:sonar'
-
+}
  
 }
 		}
