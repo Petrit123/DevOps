@@ -23,7 +23,7 @@
         
         post {
             failure {
-            	emailext body: 'This build failed', subject: 'Failure', to: 'petritt.k@gmail.com'
+            	emailext body: 'This build failed', subject: 'Failure', to: 'mark.odonoghue.students.ittralee.ie'
             }
         }
                   
