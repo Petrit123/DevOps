@@ -139,6 +139,8 @@
         <artifactId>sonar-maven-plugin</artifactId>
       </plugin>
 		</plugins>
+		
+		<finalName>PlaylistApplication-docker</finalName>
 	</build>
 	
 	<distributionManagement>
