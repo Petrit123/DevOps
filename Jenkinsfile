@@ -20,5 +20,13 @@
             }
           }
         }
+        
+        post {
+            failure {
+            	emailext body: 'This build failed', subject: 'Failure', to: 'petritt.k@gmail.com'
+            }
+        }
                   
       }
+
+
