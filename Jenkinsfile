@@ -1,32 +1,34 @@
-    pipeline {
-        agent any
-         	tools {
+pipeline {
+	agent any
+	tools {
         maven 'maven' 
-            }
-        stages {
-          stage("build & SonarQube analysis") {
-            steps {
-              withSonarQubeEnv('Petrit12345') {
-                sh 'mvn clean package sonar:sonar'
-              }
-            }
-          }
-          stage("Quality Gate") {
-            steps {
-              timeout(time: 1, unit: 'HOURS') {
-                waitForQualityGate abortPipeline: true
-              }
-                            
-            }
-          }
-        }
-        
-//        post {
-            //failure {
-            //	emailext body: 'This build failed', subject: 'Failure', to: 'markodonoghue230@gmail.com'
-            //}
-       // }
-                  
-      }
-
-
+    }
+	stages {
+		stage ('Compile Stage') {
+			
+			steps {
+					sh 'mvn clean compile'
+			}
+		}
+		
+		stage ('Testing Stage') {
+			
+			steps {
+					sh 'mvn test'
+			}
+		}
+				stage ('SonarCloud Analysis') {
+			
+			steps {
+					sh 'mvn verify sonar:sonar'
+			}
+		}
+		
+		stage ('Build Stage') {
+		 steps {
+		sh 'mvn package'
+		}
+		}
+		
+	}
+}
