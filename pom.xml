@@ -140,7 +140,7 @@
       </plugin>
 		</plugins>
 		
-		<finalName>PlaylistApplication-docker</finalName>
+		<finalName>playlistapplication-docker</finalName>
 	</build>
 	
 	<distributionManagement>
