@@ -1,5 +1,4 @@
       pipeline {
-             try {
         agent any
          	tools {
         maven 'maven' 
@@ -14,14 +13,15 @@
           }
           stage("Quality Gate") {
             steps {
+              try {
               timeout(time: 1, unit: 'HOURS') {
                 waitForQualityGate abortPipeline: true
               }
+                                } catch (err) {
+                  emailext body: 'The build failed', subject: 'Build Failure', to: 'petritt.k@gmail.com'
+            }
             }
           }
         }
-            } catch (err) {
-                  emailext body: 'The build failed', subject: 'Build Failure', to: 'petritt.k@gmail.com'
-            }
                   
       }
