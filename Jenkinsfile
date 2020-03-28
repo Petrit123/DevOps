@@ -69,5 +69,6 @@ waitForQualityGate abortPipeline: true
 		   failure {
 			   emailext body: 'The build failed', subject: 'Build failure', to: 'petritt.k@gmail.com'
 		   }
+		   
 	}
 }
