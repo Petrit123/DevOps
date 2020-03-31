@@ -17,6 +17,36 @@ pipeline {
 					sh 'mvn test'
 			}
 		}
+				stage ('SonarCloud Analysis') {
+			
+			steps {
+withSonarQubeEnv('sonar') {
+
+ 
+sh 'mvn clean package sonar:sonar'
+}
+ 
+}
+		}
+		stage("Quality Gate") {
+
+ 
+steps {
+
+ 
+timeout(time: 1, unit: 'HOURS') {
+
+ 
+waitForQualityGate abortPipeline: true
+
+ 
+}
+
+ 
+}
+
+ 
+}
 		
 		stage ('Build Stage') {
 		 steps {
@@ -32,5 +62,14 @@ pipeline {
 		
 		
 	}
-	
+	post {
+		         success {  
+               emailext body: 'The build succeeded', subject: 'Build Success', to: 'petritt.k@gmail.com'
+         }  
+		
+		   failure {
+			   emailext body: 'The build failed', subject: 'Build failure', to: 'petritt.k@gmail.com'
+		   }
+		   
+	}
 }
