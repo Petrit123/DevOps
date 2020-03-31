@@ -58,14 +58,4 @@ waitForQualityGate abortPipeline: true
 		
 		
 	}
-	post {
-		         success {  
-               emailext body: 'The build succeeded', subject: 'Build Success', to: 'petritt.k@gmail.com'
-         }  
-		
-		   failure {
-			   emailext body: 'The build failed', subject: 'Build failure', to: 'petritt.k@gmail.com'
-		   }
-		   
-	}
 }
