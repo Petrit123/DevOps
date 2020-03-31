@@ -19,10 +19,9 @@
 	<properties>
 		<java.version>1.8</java.version>
 
-  <sonar.projectKey>Petrit123_DevOps</sonar.projectKey>
-  <sonar.organization>petrit123</sonar.organization>
+  <sonar.projectKey>PlaylistApplication-DevOps</sonar.projectKey>
   <sonar.host.url>http://sonarqube2-ci-cd.apps.openshiftonaws.awsopenshift.co.uk</sonar.host.url>
-  <sonar.login>9915bbbf75e91136f347dd2f6f75b9e4a8190893</sonar.login>
+  <sonar.login>8a2fe18ed0b15d3f5c3c41f19beb557425679458</sonar.login>
 </properties>
 
 	<dependencies>
