@@ -22,8 +22,9 @@ pipeline {
 			steps {
 withSonarQubeEnv('sonar') {
 
- 
-sh 'mvn clean package sonar:sonar'
+sh 'mvn sonar:sonar \
+  -Dsonar.host.url=http://sonarqube2-ci-cd.apps.openshiftonaws.awsopenshift.co.uk \
+  -Dsonar.login=9915bbbf75e91136f347dd2f6f75b9e4a8190893'
 }
 
 }
