@@ -19,12 +19,8 @@ pipeline {
 		}
 				stage ('SonarCloud Analysis') {
 			
-			steps {
-withSonarQubeEnv('Petrit12345') {
-
- 
-sh 'mvn clean package sonar:sonar'
-}
+			steps { 
+sh 'mvn sonar:sonar'
  
 }
 		}
