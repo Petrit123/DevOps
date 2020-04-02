@@ -1,4 +1,9 @@
 pipeline {
+
+environment {
+    registry = "petrit123/devops"
+    registryCredential = ‘docker’
+}
 	agent any
 	tools {
         maven 'maven' 
@@ -41,8 +46,9 @@ sh 'mvn clean package sonar:sonar'
 		
 		stage ('Build docker image') {
 		steps {
-           sh 'docker build -t petrit/PlaylistApplication:latest .'
-		
+		        script {
+          docker.build registry + ":$BUILD_NUMBER"
+        }
 		
 		}
 		
