@@ -26,8 +26,7 @@ sh 'mvn clean package sonar:sonar'
 
 }
 		}
-		
-		
+			
 		stage ('Build Stage') {
 		 steps {
 		sh 'mvn package'
@@ -42,9 +41,7 @@ sh 'mvn clean package sonar:sonar'
 		
 		stage ('Build docker image') {
 		steps {
-		   script {
-              docker build -t petrit123/PlaylistApplication:latest .
-		   }
+           sh 'docker build -t petrit/PlaylistApplication:latest .'
 		
 		
 		}
