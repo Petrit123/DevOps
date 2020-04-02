@@ -27,25 +27,6 @@ sh 'mvn clean package sonar:sonar'
 }
 		}
 		
-				stage("Quality Gate") {
-
- 
-steps {
-
- 
-timeout(time: 1, unit: 'HOURS') {
-
- 
-waitForQualityGate abortPipeline: true
-
- 
-}
-
- 
-}
-
- 
-}
 		
 		stage ('Build Stage') {
 		 steps {
@@ -57,6 +38,17 @@ waitForQualityGate abortPipeline: true
 			steps {
 			sh 'mvn deploy'
 			}
+		}
+		
+		stage ('Build docker image') {
+		steps {
+		   script {
+              docker build -t petrit123/PlaylistApplication:latest .
+		   }
+		
+		
+		}
+		
 		}
 		
 		
