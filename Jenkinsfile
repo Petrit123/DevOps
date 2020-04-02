@@ -47,9 +47,9 @@ sh 'mvn clean package sonar:sonar'
 		
 		stage ('Build docker image') {
 		steps {
-		        script {
-          docker.build registry + ":$BUILD_NUMBER"
-        }
+		withDockerRegistry(credentialsId: '4b399007-197d-4bc9-b10f-4ef417cad31c', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/petrit123/devops') {
+		docker build -t mark/book:latest .
+}
 		
 		}
 		
