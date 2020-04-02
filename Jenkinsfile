@@ -7,7 +7,6 @@ environment {
 	agent any
 	tools {
         maven 'maven' 
-        docker 'docker'
     }
 	stages {
 		stage ('Compile Stage') {
