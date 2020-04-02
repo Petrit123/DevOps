@@ -2,7 +2,7 @@ pipeline {
 
 environment {
     registry = "petrit123/devops"
-    registryCredential = ‘docker’
+    registryCredential = "docker"
 }
 	agent any
 	tools {
