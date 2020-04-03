@@ -7,7 +7,6 @@ environment {
 	agent any
 	tools {
         maven 'maven'
-        docker 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
     }
 	stages {
 		stage ('Compile Stage') {
@@ -48,7 +47,7 @@ sh 'mvn clean package sonar:sonar'
 		stage ('Build docker image') {
 		steps {
 		       script {
-		sh 'docker build -t petrit123/devops:latest .'
+              docker.build registry + ":$BUILD_NUMBER"
 		}
 		}
 		
