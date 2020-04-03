@@ -7,7 +7,7 @@ environment {
 	agent any
 	tools {
         maven 'maven'
-        org.jenkinsci.plugins.docker.commons.tools.DockerTool 'docker'
+        docker 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
     }
 	stages {
 		stage ('Compile Stage') {
