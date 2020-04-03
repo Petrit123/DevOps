@@ -1,9 +1,4 @@
 pipeline {
-
-environment {
-    registry = "petrit123/devops"
-    registryCredential = '6b58df30-d79b-4911-86cc-8c38349acd6d'
-}
 	agent any
 	tools {
         maven 'maven'
@@ -44,7 +39,11 @@ sh 'mvn clean package sonar:sonar'
 			}
 		}
 		
-
+		stage ('Build docker image') {
+		steps {
+		sh "docker build -t petrit123/devops ."
+		}
+		}
 		
 		
 	}
