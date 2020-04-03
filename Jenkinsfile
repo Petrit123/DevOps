@@ -47,7 +47,7 @@ sh 'mvn clean package sonar:sonar'
 		stage ('Build docker image') {
 		steps {
 		       script {
-		          docker.build registry + ":$BUILD_NUMBER"
+		        dockerImage = docker.build registry + ":$BUILD_NUMBER"
 		}
 		}
 		
