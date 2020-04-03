@@ -21,7 +21,7 @@
 
   <sonar.projectKey>PlaylistApplication-DevOps</sonar.projectKey>
   <sonar.host.url>http://sonarqube2-ci-cd.apps.openshiftonaws.awsopenshift.co.uk</sonar.host.url>
-  <sonar.login>9dd175f59a4096f3a8ceb5392242b1bec823999e</sonar.login>
+  <sonar.login>3935b5f7ef6982390b02a6f7d1d85e5be4d47933</sonar.login>
 </properties>
 
 	<dependencies>
