@@ -6,7 +6,8 @@ environment {
 }
 	agent any
 	tools {
-        maven 'maven' 
+        maven 'maven'
+        org.jenkinsci.plugins.docker.commons.tools.DockerTool 'docker'
     }
 	stages {
 		stage ('Compile Stage') {
@@ -47,9 +48,7 @@ sh 'mvn clean package sonar:sonar'
 		stage ('Build docker image') {
 		steps {
 		       script {
-		withDockerRegistry(credentialsId: '6b58df30-d79b-4911-86cc-8c38349acd6d', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/petrit123/devops') {
-		'docker build -t petrit123/devops:latest .'
-}
+		sh 'docker build -t petrit123/devops:latest .'
 		}
 		}
 		
