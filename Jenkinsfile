@@ -39,6 +39,12 @@ pipeline {
 		}
 		}
 		
+		stage ('Push to Nexus') {
+		steps {
+		sh 'mvn deploy'
+		}
+		}
+		
 		
 	}
 	post {
