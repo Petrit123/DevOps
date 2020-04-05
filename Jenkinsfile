@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	tools {
-	    JAVA_HOME-202 'openjdk-1.8'
+	    jdk 'JAVA_HOME-202'
         maven 'maven' 
     }
 	stages {
