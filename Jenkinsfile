@@ -1,12 +1,47 @@
-node {
-checkout scm
+pipeline {
+	agent any
+	tools {
+        maven 'maven' 
+    }
+	stages {
+		stage ('Compile Stage') {
+			
+			steps {
+					sh 'mvn clean compile'
+			}
+		}
+		
+		stage ('Testing Stage') {
+			
+			steps {
+					sh 'mvn test'
+			}
+		}
+				stage ('SonarCloud Analysis') {
+			
+			steps {
+               sh 'mvn sonar:sonar'
 
-  stage('Push image to registry') {
-docker.withRegistry('https://index.docker.io/v1/','DockerHub') {
-    
-    def customImage = docker.build("petrit123/devops")
-    
-    customImage.push()
 }
-}
+		}
+		
+		
+		stage ('Build Stage') {
+		 steps {
+		sh 'mvn package'
+		}
+		}
+		
+		
+	}
+	post {
+		         success {  
+               emailext body: 'The build succeeded', subject: 'Build Success', to: 'petritt.k@gmail.com'
+         }  
+		
+		   failure {
+			   emailext body: 'The build failed', subject: 'Build failure', to: 'petritt.k@gmail.com'
+		   }
+		   
+	}
 }

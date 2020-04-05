@@ -19,9 +19,10 @@
 	<properties>
 		<java.version>1.8</java.version>
 
-  <sonar.projectKey>PlaylistApplication-DevOps</sonar.projectKey>
-  <sonar.host.url>http://sonarqube2-ci-cd.apps.openshiftonaws.awsopenshift.co.uk</sonar.host.url>
-  <sonar.login>9fb1cf77840479a8d02a9fd365c2871a03f3632f</sonar.login>
+  <sonar.projectKey>Petrit123_DevOps</sonar.projectKey>
+    <sonar.organization>petrit123</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.login>83165ca4528c23f8d44765a8994d2ec180b124a6</sonar.login>
 </properties>
 
 	<dependencies>
@@ -140,22 +141,9 @@
       
 		</plugins>
 		
-
-		
 		<finalName>playlistapplication-docker</finalName>
 	</build>
 	
-	<distributionManagement>
-    <repository>
-      <id>nexus</id>
-      <name>Releases</name>
-      <url>http://nexus3-ci-cd.apps.openshiftonaws.awsopenshift.co.uk/repository/maven-releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus</id>
-      <name>Snapshot</name>
-      <url>http://nexus3-ci-cd.apps.openshiftonaws.awsopenshift.co.uk/repository/maven-snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
+
 
 </project>
