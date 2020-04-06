@@ -1,6 +1,6 @@
 pipeline {
    environment {
-    registry = "https://index.docker.io/v1/"
+    registry = "petrit123/devops"
     registryCredential = "DockerHub"
   }     
 	agent any
@@ -56,7 +56,6 @@ pipeline {
 		    }
 		   }
 		  }
-		
 		
 	}
 	post {
