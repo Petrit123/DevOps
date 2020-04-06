@@ -55,8 +55,7 @@ pipeline {
 		    docker.build registry + ":$BUILD_NUMBER"
 		    }
 		   }
-		  }
-		  
+		  } 
 		  stage ('Push Image to registry') {
 		   steps {
 		    script {
