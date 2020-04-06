@@ -1,4 +1,8 @@
 pipeline {
+   environment {
+    registry = "https://index.docker.io/v1/"
+    registryCredential = "DockerHub"
+  }     
 	agent any
 	tools {
         maven 'maven' 
@@ -44,6 +48,14 @@ pipeline {
 		sh 'mvn deploy'
 		}
 		}
+		
+		stage ('Build Docker Image') {
+		 steps {
+		    script {
+		    docker.build registry + ":$BUILD_NUMBER"
+		    }
+		   }
+		  }
 		
 		
 	}
