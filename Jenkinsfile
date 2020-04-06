@@ -56,6 +56,16 @@ pipeline {
 		    }
 		   }
 		  }
+		  
+		  stage ('Push Image to registry') {
+		   steps {
+		    script {
+		    docker.withRegistry('https://index.docker.io/v1/','DockerHub') {
+		    dockerImage.push()
+		    }
+		    }
+		    }
+		    }
 		
 	}
 	post {
