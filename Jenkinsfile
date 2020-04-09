@@ -13,7 +13,7 @@ pipeline {
             steps {
                 dir('deployment'){
                     echo 'Deploying to test'
-                    sh '/usr/local/bin/ansible-playbook -i 63.33.206.189 dev-servers site.yml'
+                    sh '/usr/local/bin/ansible-playbook -i 63.33.206.189 deployment/roles/common/tasks/main.yml'
                 }
             }
         }

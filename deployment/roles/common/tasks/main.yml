@@ -1,11 +1,3 @@
-- name: Set up multiple authorized keys
-  authorized_key:
-    user: ec2-user
-    state: present
-    key: "{{ lookup('file', '/home/ec2-user/.ssh/id_rsa.pub') }}"
-  with_file:
-    - public_keys/ec2-user.pub
-    
 - name: Install yum utils
   yum:
     name: yum-utils
