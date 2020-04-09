@@ -11,10 +11,7 @@ pipeline {
 	stages {
         stage('Deploying test'){
             steps {
-                dir('deployment'){
-                    echo 'Deploying to test'
-                    sh '/usr/local/bin/ansible-playbook -i hosts main.yml'
-                }
+            sshPublisher(publishers: [sshPublisherDesc(configName: 'Ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '/usr/local/bin/ansible-playbook -i hosts main.yml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
 		
