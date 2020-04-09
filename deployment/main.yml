@@ -30,7 +30,7 @@
     - name: Install Docker
       package:
         name: docker-ce
-        state: stable
+        state: present
       become: yes
  
     - name: Start Docker service
