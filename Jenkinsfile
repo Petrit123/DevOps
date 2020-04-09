@@ -11,7 +11,10 @@ pipeline {
 	stages {
         stage('Deploying test'){
             steps {
-            sshPublisher(publishers: [sshPublisherDesc(configName: 'Dev_Env', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '/usr/local/bin/ansible-playbook -i dev-servers site.yml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                dir('deployment'){
+                    echo 'Deploying to test'
+                    sh '/usr/local/bin/ansible-playbook -i 63.33.206.189 dev-servers site.yml'
+                }
             }
         }
 		
