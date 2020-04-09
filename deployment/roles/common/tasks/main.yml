@@ -1,6 +1,4 @@
 - name: Set up production environment
-  gather_facts: No
-  hosts: docker
  
   tasks:
     - name: Install yum utils
