@@ -1,6 +1,5 @@
 ---
-  tasks:
-
+ hosts: web-servers
    - name: Install yum utils
      yum:
        name: yum-utils
