@@ -5,11 +5,44 @@
   gather_facts: false
   hosts: all
   tasks:
-
-    - name: Get config for VyOS devices
-      vyos_facts:
-        gather_subset: all
-
-    - name: Display the config
-      debug:
-        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+       
+    - name: Install yum utils
+      yum:
+        name: yum-utils
+        state: latest
+ 
+    - name: Install device-mapper-persistent-data
+      yum:
+        name: device-mapper-persistent-data
+        state: latest
+ 
+    - name: Install lvm2
+      yum:
+        name: lvm2
+        state: latest
+ 
+    - name: Add Docker repo
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docker-ce.repo
+      become: yes
+ 
+    - name: Install Docker
+      package:
+        name: docker-ce
+        state: latest
+      become: yes
+ 
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+      become: yes
+ 
+    - name: Add user artem to docker group
+      user:
+        name: artem
+        groups: docker
+        append: yes
+      become: yes
