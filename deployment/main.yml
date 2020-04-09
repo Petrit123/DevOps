@@ -3,8 +3,7 @@
 - name: Network Getting Started First Playbook
   gather_facts: false
   hosts: all
-  vars:
-    ansible_network_os: linux
+  become: true
   tasks:
        
     - name: Install yum utils
