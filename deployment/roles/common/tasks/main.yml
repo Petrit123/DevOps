@@ -4,7 +4,7 @@
     state: present
     key: '{{ item }}'
   with_file:
-    - public_keys/some-user.pub
+    - public_keys/ec2-user.pub
 
 - name: Install yum utils
   yum:
