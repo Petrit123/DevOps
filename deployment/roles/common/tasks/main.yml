@@ -2,7 +2,7 @@
   authorized_key:
     user: ec2-user
     state: present
-    key: '{{ item }}'
+    key: "{{ lookup('file', '/home/ec2-user/.ssh/id_rsa.pub') }}"
   with_file:
     - public_keys/ec2-user.pub
 
