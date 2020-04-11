@@ -3,6 +3,8 @@ package com.PlaylistApplication;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONArray;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -47,8 +49,6 @@ public class PlaylistApplicationTests {
         		MediaType.APPLICATION_JSON);
     	
     	MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-    	
-    	System.out.println("\n\n This is the response " + result.getResponse().getContentAsString());
   
     	String expected = "{\"name\":\"Playlist 1\",\"description\":\"This is a test playlist\",\"songList\":[{\"title\":null,\"artist\":null,\"album\":null,\"releaseDate\":null,\"downloadDate\":null}],\"_id\":\"c6f9c78f8d1b6ae3f741c5b538000038\",\"_rev\":\"1-268907eacc9bc87bda0b8e84c2b24576\"}";  	
     	JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
@@ -75,6 +75,28 @@ public class PlaylistApplicationTests {
     	
     	assertEquals(HttpStatus.OK.value(), response.getStatus());
     														  
+    }
+    
+    @Test
+    public void getAllPlaylists() throws Exception {
+    	List<PlayList> playlist = new ArrayList<PlayList>();
+    	songList.add(song);
+    	mockPlayList = new PlayList("c6f9c78f8d1b6ae3f741c5b538000038","1-268907eacc9bc87bda0b8e84c2b24576","Playlist 1", "This is a test playlist", songList);
+    	playlist.add(mockPlayList);
+    	Mockito.when(
+                        playlistController.getAllPlayLists()).thenReturn(playlist);
+    	
+    	RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/playlist")
+    			.accept(
+        		MediaType.APPLICATION_JSON);
+    	
+    	MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+    	
+    	JSONArray array = new JSONArray(result.getResponse().getContentAsString());
+   
+  
+    	String expected = "{\"name\":\"Playlist 1\",\"description\":\"This is a test playlist\",\"songList\":[{\"title\":null,\"artist\":null,\"album\":null,\"releaseDate\":null,\"downloadDate\":null}],\"_id\":\"c6f9c78f8d1b6ae3f741c5b538000038\",\"_rev\":\"1-268907eacc9bc87bda0b8e84c2b24576\"}";  	
+    	JSONAssert.assertEquals(expected, array.getJSONObject(0), false);
     }
 
 }
