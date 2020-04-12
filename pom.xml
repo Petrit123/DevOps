@@ -20,9 +20,9 @@
 		<java.version>1.8</java.version>
 
   <sonar.projectKey>Petrit123_DevOps</sonar.projectKey>
-    <sonar.organization>petrit123</sonar.organization>
+  <sonar.organization>petrit123</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  <sonar.login>83165ca4528c23f8d44765a8994d2ec180b124a6</sonar.login>
+  <sonar.login>505d764cc1caaa4d433c8411fac2b4e0870d0aab</sonar.login>
   
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   
@@ -156,6 +156,13 @@
             <artifactId>freemarker</artifactId>
             <version>2.3.28</version>
         </dependency>
+
+<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+<dependency>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.3</version>
+</dependency>
         
 
 	</dependencies>
@@ -165,7 +172,7 @@
 			<plugin>
 		<groupId>org.jacoco</groupId>
 		<artifactId>jacoco-maven-plugin</artifactId>
-		<version>0.8.2</version>
+		<version>0.8.3</version>
 		<executions>
 			<execution>
 				<goals>
