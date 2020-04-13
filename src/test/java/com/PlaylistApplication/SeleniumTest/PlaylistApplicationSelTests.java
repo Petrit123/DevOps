@@ -14,14 +14,14 @@ public class PlaylistApplicationSelTests {
 	@Test
 	public void testCreatePlaylistUI() {
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/petri/Downloads/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chromedriver");
 		
 		WebDriver driver = new ChromeDriver();		
 		driver.manage().window().maximize();
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		driver.get("http://52.31.233.0:3000");
+		driver.get("http://34.244.56.233:3000");
 		System.out.println(driver.getTitle());
 		
 		WebElement createPlaylistBtn = driver.findElement(By.className("btn1"));

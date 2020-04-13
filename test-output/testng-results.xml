@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9699" started-at="2020-04-12T21:18:41 IST" finished-at="2020-04-12T21:18:51 IST">
+  <suite name="Default suite" duration-ms="8763" started-at="2020-04-13T14:10:29 IST" finished-at="2020-04-13T14:10:38 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9699" started-at="2020-04-12T21:18:41 IST" finished-at="2020-04-12T21:18:51 IST">
+    <test name="Default test" duration-ms="8763" started-at="2020-04-13T14:10:29 IST" finished-at="2020-04-13T14:10:38 IST">
       <class name="com.PlaylistApplication.SeleniumTest.PlaylistApplicationSelTests">
-        <test-method status="PASS" signature="testCreatePlaylistUI()[pri:0, instance:com.PlaylistApplication.SeleniumTest.PlaylistApplicationSelTests@55040f2f]" name="testCreatePlaylistUI" duration-ms="9650" started-at="2020-04-12T21:18:41 IST" finished-at="2020-04-12T21:18:51 IST">
+        <test-method status="PASS" signature="testCreatePlaylistUI()[pri:0, instance:com.PlaylistApplication.SeleniumTest.PlaylistApplicationSelTests@55040f2f]" name="testCreatePlaylistUI" duration-ms="8716" started-at="2020-04-13T14:10:29 IST" finished-at="2020-04-13T14:10:38 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreatePlaylistUI -->
