@@ -76,12 +76,10 @@ pipeline {
 	}
 	post {
 		         success {  
-		         mail bcc: '', body: 'The build succeeded', cc: '', from: '', replyTo: '', subject: 'Build Status', to: 'petritt.k@gmail.com'
                emailext attachLog: true, body: '', replyTo: 'petritt.k@gmail.com', subject: '', to: 'petritt.k@gmail.com'
          }  
 		
 		   failure {
-		   mail bcc: '', body: 'The build failed', cc: '', from: '', replyTo: '', subject: 'Build Status', to: 'petritt.k@gmail.com'
 			   emailext attachLog: true, body: '', replyTo: 'petritt.k@gmail.com', subject: '', to: 'petritt.k@gmail.com'
 		   }
 		   
