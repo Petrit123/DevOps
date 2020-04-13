@@ -29,6 +29,11 @@ public class PlayListController {
 	//Get all playlists
 	@RequestMapping(value = "/playlist" , produces="application/json",method = RequestMethod.GET)
 	public List<PlayList> getAllPlayLists(){
+		List<SongEntity> songList = new ArrayList<SongEntity>();
+		SongEntity song = new SongEntity();
+		songList.add(song);
+		PlayList andrewsPlaylist =  new PlayList("c6f9c78f8d1b6ae3f741c5b538000038","1-268907eacc9bc87bda0b8e84c2b24576","Playlist 1", "This is a test playlist", songList);
+		playListRepo.add(andrewsPlaylist);
 		return playListRepo.getAll();
 	}
 	
@@ -43,12 +48,7 @@ public class PlayListController {
 	//Create a new playlist document
 	@RequestMapping(value = "/addNew",method =RequestMethod.POST)
 	public PlayList createNewPlayList(@RequestBody PlayList playList) {
-		List<SongEntity> songList = new ArrayList<SongEntity>();
-		SongEntity song = new SongEntity();
-		songList.add(song);
-		PlayList andrewsPlaylist =  new PlayList("c6f9c78f8d1b6ae3f741c5b538000038","1-268907eacc9bc87bda0b8e84c2b24576","Playlist 1", "This is a test playlist", songList);
 		playListRepo.add(playList);
-		playListRepo.add(andrewsPlaylist);
 		return playList;
 	}
 	
