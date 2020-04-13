@@ -32,7 +32,7 @@ public class PlayListController {
 		List<SongEntity> songList = new ArrayList<SongEntity>();
 		SongEntity song = new SongEntity();
 		songList.add(song);
-		PlayList andrewsPlaylist =  new PlayList("c6f9c78f8d1b6ae3f741c5b538000038","1-268907eacc9bc87bda0b8e84c2b24576","Andrew's playlist", "This is a test playlist", songList);
+		PlayList andrewsPlaylist =  new PlayList("c6f9c78f8d1b6ae3f741c5b538000012","1-268907eacc9bc87bda0b8e84c2b24512","Andrew's playlist", "This is a test playlist", songList);
 		playListRepo.add(andrewsPlaylist);
 		return playListRepo.getAll();
 	}
