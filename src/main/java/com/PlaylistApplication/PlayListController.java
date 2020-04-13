@@ -1,5 +1,6 @@
 package com.PlaylistApplication;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.ektorp.Options;
@@ -42,7 +43,12 @@ public class PlayListController {
 	//Create a new playlist document
 	@RequestMapping(value = "/addNew",method =RequestMethod.POST)
 	public PlayList createNewPlayList(@RequestBody PlayList playList) {
+		List<SongEntity> songList = new ArrayList<SongEntity>();
+		SongEntity song = new SongEntity();
+		songList.add(song);
+		PlayList andrewsPlaylist =  new PlayList("c6f9c78f8d1b6ae3f741c5b538000038","1-268907eacc9bc87bda0b8e84c2b24576","Playlist 1", "This is a test playlist", songList);
 		playListRepo.add(playList);
+		playListRepo.add(andrewsPlaylist);
 		return playList;
 	}
 	
@@ -109,6 +115,7 @@ public class PlayListController {
 	public int mapReduce(@RequestParam String playListName) {
 		return playListRepo.getNoSongs(playListName);
 	}
+	
 
 
 }
