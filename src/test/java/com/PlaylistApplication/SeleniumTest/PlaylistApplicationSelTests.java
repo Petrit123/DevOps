@@ -14,7 +14,7 @@ public class PlaylistApplicationSelTests {
 	@Test
 	public void testCreatePlaylistUI() {
 		
-		System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/home/ec2-user/./chromedriver");
 		
 		WebDriver driver = new ChromeDriver();		
 		driver.manage().window().maximize();
