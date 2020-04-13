@@ -28,7 +28,13 @@ public class PlayList {
 		this.description = description;
 		this.songList = songList;
 	}
-	    
+
+	    public PlayList( String name, String description, List<SongEntity> songList) {
+		this.name = name;
+		this.description = description;
+		this.songList = songList;
+	}
+
 	    public PlayList() {
 	    	
 	    }
