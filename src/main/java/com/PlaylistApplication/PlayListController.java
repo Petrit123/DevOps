@@ -32,8 +32,9 @@ public class PlayListController {
 		List<SongEntity> songList = new ArrayList<SongEntity>();
 		SongEntity song = new SongEntity();
 		songList.add(song);
-		PlayList andrewsPlaylist =  new PlayList("1","1","Andrew's playlist", "This is a test playlist", songList);
+		PlayList andrewsPlaylist =  new PlayList("","","Andrew's playlist", "This is a test playlist", songList);
 		playListRepo.add(andrewsPlaylist);
+
 		return playListRepo.getAll();
 	}
 	
