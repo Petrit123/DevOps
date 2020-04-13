@@ -82,6 +82,11 @@ pipeline {
 		   failure {
 			   emailext attachLog: true, body: '', replyTo: 'petritt.k@gmail.com', subject: '', to: 'petritt.k@gmail.com'
 		   }
+		   always {
+		   
+		   slackSend channel: 'builds', color: 'Green', message: '${currentBuild.currentResult}', tokenCredentialId: 'Jenkins-slack-integration'		   
+		   
+		   }
 		   
 	}
 }
