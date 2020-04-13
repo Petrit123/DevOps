@@ -76,11 +76,11 @@ pipeline {
 	}
 	post {
 		         success {  
-               emailext body: '', subject: '', to: 'petritt.k@gmail.com'
+               emailext attachLog: true, body: '', replyTo: 'petritt.k@gmail.com', subject: '', to: 'petritt.k@gmail.com'
          }  
 		
 		   failure {
-			   emailext body: '', subject: '', to: 'petritt.k@gmail.com'
+			   emailext attachLog: true, body: '', replyTo: 'petritt.k@gmail.com', subject: '', to: 'petritt.k@gmail.com'
 		   }
 		   
 	}
