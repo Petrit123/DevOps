@@ -27,7 +27,7 @@ public class PlayListController {
 	
 
 	
-	@RequestMapping(value = "/devops",method =RequestMethod.POST)
+	@RequestMapping(value = "/devops",method =RequestMethod.GET)
 	public void test() {
 		List<SongEntity> songList = new ArrayList<SongEntity>();
 		SongEntity song = new SongEntity();
