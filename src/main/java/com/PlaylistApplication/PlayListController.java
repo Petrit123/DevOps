@@ -25,6 +25,20 @@ public class PlayListController {
 	@Autowired
 	PlayListRepository playListRepo;
 	
+
+	
+//	@RequestMapping(value = "/devops",method =RequestMethod.POST)
+//	public void test() {
+//		List<SongEntity> songList = new ArrayList<SongEntity>();
+//		SongEntity song = new SongEntity();
+//		songList.add(song);
+//		PlayList andrewsPlaylist =  new PlayList("Andrew's playlist", "This is a test playlist", songList);
+//		PlayList murtsPlaylist = new PlayList("Murt's playlist", "This is a test playlst", songList);
+//		playListRepo.add(andrewsPlaylist);
+//		playListRepo.add(murtsPlaylist);
+//	}
+		
+	
 	
 	//Get all playlists
 	@RequestMapping(value = "/playlist" , produces="application/json",method = RequestMethod.GET)
