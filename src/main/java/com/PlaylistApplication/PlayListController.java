@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @RestController
-@CrossOrigin(origins = "http://34.244.56.233:3000")
+@CrossOrigin(origins = "http://63.35.162.218:3000")
 public class PlayListController {
 	
 	@Autowired
@@ -29,11 +29,12 @@ public class PlayListController {
 	//Get all playlists
 	@RequestMapping(value = "/playlist" , produces="application/json",method = RequestMethod.GET)
 	public List<PlayList> getAllPlayLists(){
-		List<SongEntity> songList = new ArrayList<SongEntity>();
-		SongEntity song = new SongEntity();
-		songList.add(song);
-		PlayList andrewsPlaylist =  new PlayList("Andrew's playlist", "This is a test playlist", songList);
-		playListRepo.add(andrewsPlaylist);
+//		List<SongEntity> songList = new ArrayList<SongEntity>();
+//		SongEntity song = new SongEntity();
+//		songList.add(song);
+//		PlayList andrewsPlaylist =  new PlayList("Andrew's playlist", "This is a test playlist", songList);
+//		PlayList murtsPlaylist = new PlayList("Murt's playlist", "This is a test playlst", songList);
+		//playListRepo.add(andrewsPlaylist);
 
 		return playListRepo.getAll();
 	}
