@@ -25,24 +25,30 @@ public class PlayListController {
 	@Autowired
 	PlayListRepository playListRepo;
 	
+	@RequestMapping(value = "/devops" , produces="application/json",method = RequestMethod.GET)
+	public List<PlayList> test(){
+			List<SongEntity> songList = new ArrayList<SongEntity>();
+			SongEntity song = new SongEntity();
+			songList.add(song);
+			PlayList andrewsPlaylist =  new PlayList("Andrew's playlist", "This is a test playlist", songList);
+			PlayList murtsPlaylist = new PlayList("Murt's playlist", "This is a test playlst", songList);
+			playListRepo.add(andrewsPlaylist);
+			playListRepo.add(murtsPlaylist);
 
-	
-	@RequestMapping(value = "/devops",produces="application/json",method =RequestMethod.GET)
-	public void test() {
-		List<SongEntity> songList = new ArrayList<SongEntity>();
-		SongEntity song = new SongEntity();
-		songList.add(song);
-		PlayList andrewsPlaylist =  new PlayList("Andrew's playlist", "This is a test playlist", songList);
-		PlayList murtsPlaylist = new PlayList("Murt's playlist", "This is a test playlst", songList);
-		playListRepo.add(andrewsPlaylist);
-		playListRepo.add(murtsPlaylist);
+		return playListRepo.getAll();
 	}
-		
-	
 	
 	//Get all playlists
 	@RequestMapping(value = "/playlist" , produces="application/json",method = RequestMethod.GET)
 	public List<PlayList> getAllPlayLists(){
+			List<SongEntity> songList = new ArrayList<SongEntity>();
+			SongEntity song = new SongEntity();
+			songList.add(song);
+			PlayList andrewsPlaylist =  new PlayList("Andrew's playlist", "This is a test playlist", songList);
+			PlayList murtsPlaylist = new PlayList("Murt's playlist", "This is a test playlst", songList);
+			playListRepo.add(andrewsPlaylist);
+			playListRepo.add(murtsPlaylist);
+
 		return playListRepo.getAll();
 	}
 	
