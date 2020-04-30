@@ -14,14 +14,14 @@
 //	@Test
 //	public void testCreatePlaylistUI() {
 //		
-//		System.setProperty("webdriver.chrome.driver", "src/main/java/com/PlaylistApplication/WebDriver/chromedriver");
+//		System.setProperty("webdriver.chrome.driver", "C:/users/petri/Downloads/chromedriver.exe");
 //		
 //		WebDriver driver = new ChromeDriver();		
 //		driver.manage().window().maximize();
 //		
 //		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //		
-//		driver.get("http://34.244.56.233:3000");
+//		driver.get("http://localhost:3000");
 //		System.out.println(driver.getTitle());
 //		
 //		WebElement createPlaylistBtn = driver.findElement(By.className("btn1"));
