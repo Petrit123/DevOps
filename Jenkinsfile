@@ -49,7 +49,6 @@ pipeline {
 		sh 'mvn deploy'
 		}
 		}
-		
 		stage ('Build Docker Image') {
 		 steps {
 		    script {
