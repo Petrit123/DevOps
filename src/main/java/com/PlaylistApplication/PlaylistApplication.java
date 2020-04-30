@@ -13,7 +13,7 @@ public class PlaylistApplication {
 	
 	public void addCorsMappings(CorsRegistry registry) {
 	  registry.addMapping("/api/**")
-	   	  .allowedOrigins("http://63.35.162.218:8085", "http://localhost:5555")
+	   	  .allowedOrigins("http://34.244.229.201:8085", "http://localhost:5555")
 		  .allowedMethods("POST", "GET",  "PUT", "OPTIONS", "DELETE")
 		  .allowedHeaders("X-Auth-Token", "Content-Type")
 		  .exposedHeaders("custom-header1", "custom-header2")

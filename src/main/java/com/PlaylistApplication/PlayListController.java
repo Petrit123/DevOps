@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @RestController
-@CrossOrigin(origins = "http://63.35.162.218:3000")
+@CrossOrigin(origins = "http://34.244.229.201:3000")
 public class PlayListController {
 	
 	@Autowired
